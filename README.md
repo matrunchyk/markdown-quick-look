@@ -26,7 +26,7 @@ No package dependencies, JavaScript libraries, analytics, or network-loaded asse
 
 Download the latest universal DMG from [GitHub Releases](https://github.com/matrunchyk/markdown-quick-look/releases/latest), open it, and drag **MarkdownQuickLook** to **Applications**. Launch the app once so macOS discovers the extension.
 
-The automated release is ad-hoc signed and is not Apple-notarized. If Gatekeeper blocks it, Control-click the app in Applications, choose **Open**, then confirm **Open**. Alternatively, build it from source.
+GitHub Releases are signed with a Developer ID certificate and notarized by Apple for a normal Gatekeeper installation experience.
 
 If macOS does not enable it automatically, open **System Settings → General → Login Items & Extensions → Quick Look** and enable **Markdown Preview**.
 
@@ -60,7 +60,7 @@ Run the renderer smoke tests:
 
 Or open `MarkdownQuickLook.xcodeproj` in Xcode and run the **MarkdownQuickLook** scheme on **My Mac**.
 
-The build script creates an ad-hoc signed universal app. Every push to `main` is tested, packaged as a versioned DMG, and published as a GitHub Release. A Developer ID Application certificate and Apple notarization are still required for a warning-free Gatekeeper experience.
+The local build script creates an ad-hoc signed universal app by default. Every push to `main` is tested, signed with Developer ID and Hardened Runtime, packaged as a versioned DMG, notarized and stapled, then published as a GitHub Release.
 
 ## Troubleshooting
 
