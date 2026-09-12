@@ -1,5 +1,7 @@
 # Markdown Quick Look
 
+[![Build](https://github.com/matrunchyk/markdown-quick-look/actions/workflows/build.yml/badge.svg)](https://github.com/matrunchyk/markdown-quick-look/actions/workflows/build.yml)
+
 A lightweight, native Quick Look extension that renders Markdown directly in macOS Finder. Select a Markdown file, press Space, and read the formatted document instead of raw source.
 
 No package dependencies, JavaScript libraries, analytics, or network-loaded assets.
