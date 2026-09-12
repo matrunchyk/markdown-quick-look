@@ -21,9 +21,20 @@ No package dependencies, JavaScript libraries, analytics, or network-loaded asse
 ## Requirements
 
 - macOS 13 or newer
-- Xcode with the macOS SDK and command-line tools
 
-## Build and install
+## Install
+
+Download the latest universal DMG from [GitHub Releases](https://github.com/matrunchyk/markdown-quick-look/releases/latest), open it, and drag **MarkdownQuickLook** to **Applications**. Launch the app once so macOS discovers the extension.
+
+The automated release is ad-hoc signed and is not Apple-notarized. If Gatekeeper blocks it, Control-click the app in Applications, choose **Open**, then confirm **Open**. Alternatively, build it from source.
+
+If macOS does not enable it automatically, open **System Settings → General → Login Items & Extensions → Quick Look** and enable **Markdown Preview**.
+
+Select a `.md`, `.markdown`, `.mdown`, `.mkd`, or `.mkdn` file in Finder and press Space.
+
+## Build from source
+
+This requires Xcode with the macOS SDK and command-line tools.
 
 Build the universal app locally:
 
@@ -31,17 +42,13 @@ Build the universal app locally:
 ./scripts/build.sh
 ```
 
-Install and launch it once so macOS discovers the extension:
+Install the resulting app and launch it once:
 
 ```sh
 ditto .build/DerivedData/Build/Products/Release/MarkdownQuickLook.app \
   /Applications/MarkdownQuickLook.app
 open /Applications/MarkdownQuickLook.app
 ```
-
-If macOS does not enable it automatically, open **System Settings → General → Login Items & Extensions → Quick Look** and enable **Markdown Preview**.
-
-Select a `.md`, `.markdown`, `.mdown`, `.mkd`, or `.mkdn` file in Finder and press Space.
 
 ## Development
 
@@ -53,7 +60,7 @@ Run the renderer smoke tests:
 
 Or open `MarkdownQuickLook.xcodeproj` in Xcode and run the **MarkdownQuickLook** scheme on **My Mac**.
 
-The build script creates an ad-hoc signed universal app for direct local installation. Public binary distribution through the web requires your own Developer ID Application certificate and Apple notarization.
+The build script creates an ad-hoc signed universal app. Every push to `main` is tested, packaged as a versioned DMG, and published as a GitHub Release. A Developer ID Application certificate and Apple notarization are still required for a warning-free Gatekeeper experience.
 
 ## Troubleshooting
 
