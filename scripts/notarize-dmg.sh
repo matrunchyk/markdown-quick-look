@@ -29,7 +29,7 @@ xcrun notarytool submit "$dmg_path" \
 
 xcrun stapler staple --verbose "$dmg_path"
 xcrun stapler validate --verbose "$dmg_path"
-spctl --assess \
+/usr/sbin/spctl --assess \
   --type open \
   --context context:primary-signature \
   --verbose=2 \
